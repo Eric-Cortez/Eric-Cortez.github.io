@@ -274,6 +274,50 @@
         </ul>
         </div>
     </section>
+    <!-- testimonials -->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Testimonial</h2>
+                <h3 class="section-subheading text-muted">Feedback from Teammates</h3>
+
+                <style>
+                    .testimonial-container {
+                        height: fit-content;
+                        align-items: center;
+                    }
+
+                    .testimonial {
+                        display: none;
+                        font-size: 40px;
+                        font-style: italic;
+                    }
+
+                    .testimonial.active {
+                        display: block;
+                        /* Display the active testimonial */
+                    }
+                </style>
+
+                <div class="testimonial-container">
+                    <p class="testimonial">"Thanks, Eric Cortez, for helping with website changes and automating the
+                        development workflow." - Team Lead</p>
+                    <p class="testimonial">"Huge Thanks for conceptualizing, designing, and building a health monitoring
+                        dashboard." - Engineering Manager</p>
+                    <p class="testimonial">"Thank you for taking the time to provide these useful links" - Teammate</p>
+                    <p class="testimonial">"Thanks for sharing your front end expertise to build an interactive goal
+                        visualization UI" - Team Lead</p>
+                    <p class="testimonial">"You rock! Thank you for the quick turn around time on this and taking time
+                        to gather more information." - Project Manager</p>
+                    <p class="testimonial">"Thank you for maintaining the AEPsych Website" - Team Lead</p>
+                    <p class="testimonial">"Thank you for your amazing work to bring our goal ontology visualization to
+                        life! This helps stakeholders and collaborators understand what's inside of the goal ontology
+                        and brainstorm ways we can collaborate!" - Team Lead</p>
+                </div>
+
+            </div>
+    </section>
+
     <!-- Skills-->
     <section class="page-section" id="services">
         <div class="container">
@@ -842,6 +886,19 @@
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script>
+        const testimonials = document.querySelectorAll('.testimonial');
+        let currentTestimonialIndex = 0;
+
+        function showNextTestimonial() {
+            testimonials[currentTestimonialIndex].classList.remove('active');
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+            testimonials[currentTestimonialIndex].classList.add('active');
+        }
+
+        // Set an interval to switch testimonials every few seconds (e.g., 5 seconds)
+        setInterval(showNextTestimonial, 5000); // Change the time (in milliseconds) as desired
+    </script>
 </body>
 
 </html>
